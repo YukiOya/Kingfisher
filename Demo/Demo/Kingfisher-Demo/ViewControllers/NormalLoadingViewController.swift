@@ -60,7 +60,11 @@ extension NormalLoadingViewController {
         imageView.kf.setImage(
             with: ImageLoader.sampleImageURLs[indexPath.row],
             placeholder: nil,
-            options: [.transition(.fade(1)), .loadDiskFileSynchronously],
+            options: [
+                .transition(.fade(1)),
+                .cacheOriginalImage,
+                .diskCacheExpiration(.seconds(60))
+            ],
             progressBlock: { receivedSize, totalSize in
                 print("\(indexPath.row + 1): \(receivedSize)/\(totalSize)")
             },
