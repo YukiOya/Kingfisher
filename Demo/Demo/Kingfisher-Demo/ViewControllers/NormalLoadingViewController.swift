@@ -63,7 +63,7 @@ extension NormalLoadingViewController {
             options: [
                 .transition(.fade(1)),
                 .cacheOriginalImage,
-                .diskCacheExpiration(.seconds(60))
+                .diskCacheExpiration(.seconds(600))
             ],
             progressBlock: { receivedSize, totalSize in
                 print("\(indexPath.row + 1): \(receivedSize)/\(totalSize)")
